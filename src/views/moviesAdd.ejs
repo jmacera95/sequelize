@@ -26,7 +26,14 @@
             <p><input type="date" name="release_date" id="" required></p>
             <label for="length">Length </label>
             <p><input type="number" name="length" id="" required></p>
-
+            <label for="genre">Genre</label>
+            <p>
+                <select name="genre" id="genre">
+                    <% for( let i = 0; i < genres.length; i++ ) { %>
+                        <option value="<%= genres[i].id %>"><%= genres[i].name %></option>
+                    <% } %> 
+                </select>
+            </p>
             <br>
             <p> <button class="botonAgregar" type="submit">Agregar</button>
             

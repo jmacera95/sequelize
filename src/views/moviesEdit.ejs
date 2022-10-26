@@ -25,9 +25,21 @@
             <p><input type="date" name="release_date" id="release_date" value="<%= Movie.release_date %>" required></p>
             <label for="length">Length </label>
             <p><input type="number" name="length" id="" value="<%= Movie.length %>" required></p>
+            <label for="genre">Genre</label>
+            <p>
+                <select name="genre" id="genre">
+                    <% for( let i = 0; i < genres.length; i++ ) { %>
+                        <% if (genres[i].id == Movie.genre_id) { %>
+                            <option selected value="<%= genres[i].id %>"><%= genres[i].name %></option>
+                        <% } else { %>
+                            <option value="<%= genres[i].id %>"><%= genres[i].name %></option>
+                        <% } %>
+                    <% } %> 
+                </select>
+            </p>
             <br>
             <p> <button class="botonAgregar" type="submit">Actualizar</button>
-        
+    
             <a  class="botonVolver" href="/movies">Listado de Películas</a></p>
         </form>
     </section>
